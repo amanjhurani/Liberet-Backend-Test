@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'base_Product_list' %}">
+    Product Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>Product</td><td>{{ object.product_name }}</td></tr>
+    <tr><td>Amount</td><td>{{ object.product_amount }}</td></tr>
+    <tr><td>Supplier</td><td>{{ object.product_supplier }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}
